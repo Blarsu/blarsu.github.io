@@ -1,4 +1,37 @@
-img{
-    height: 500px;
- 
+body{
+    background-color: #cfd3bc;
 }
+h1{
+    margin-left: 80px;
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Shadows Into Light Two';
+    font-size: 50px;
+    }
+nav ul{
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+li a{
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
+    line-height: 50px;
+}
+nav ul li{
+    font-size: 25px;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    font-family: Sora;
+    
+}
+
+li a:hover{  
+color: green;
+}
+
