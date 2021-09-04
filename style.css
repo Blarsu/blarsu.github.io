@@ -1,8 +1,15 @@
+#page-wrap {
+    width: 800px;
+    margin: 0 auto;
+}
+html,body{
+    overflow-x: hidden;
+}
 body{
     background-color: #cfd3bc;
 }
 h1{
-    margin-left: 80px;
+    
     text-align: center;
     margin-top: 0px;
     font-family: 'Shadows Into Light Two';
@@ -13,7 +20,7 @@ nav ul{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    
 }
 li a{
     padding: 20px;
