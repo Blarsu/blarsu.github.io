@@ -1,44 +1,28 @@
-#page-wrap {
-    width: 800px;
-    margin: 0 auto;
-}
-html,body{
-    overflow-x: hidden;
-}
+
 body{
     background-color: #cfd3bc;
 }
-h1{
-    
-    text-align: center;
-    margin-top: 0px;
-    font-family: 'Shadows Into Light Two';
-    font-size: 50px;
-    }
-nav ul{
-    padding: 0;
-    margin: 0 auto;
+
+.display{
+   
+    margin-top: 1%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     
 }
-li a{
-    padding: 20px;
-    text-decoration: none;
-    color: black;
+
+.items{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 30px;
+}
+
+.center{
     display: block;
-    line-height: 50px;
-}
-nav ul li{
-    font-size: 25px;
-    list-style-type: none;
-    float: left;
-    text-align: center;
-    font-family: Sora;
-    
-}
+  margin-left: auto;
+  margin-right: auto;
 
-li a:hover{  
-color: green;
 }
-
