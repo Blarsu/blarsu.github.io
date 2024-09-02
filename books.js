@@ -1,8 +1,8 @@
 console.log("JavaScript is running!");
-const readBooks = [ {
+const readBooks = [{
     title: "Born a Crime",
     author: "Trevor Noah",
-    cover : "images/born-a-crime.jpg"
+    cover: "images/born-a-crime.jpg"
 },
 {
     title: "A Promised Land",
@@ -28,6 +28,7 @@ const readBooks = [ {
 ]
 
 function displayBooks(listId, books) {
+    books.sort((a, b) => a.title.localeCompare(b.title));
     const ul = document.getElementById(listId);
     books.forEach(book => {
         const li = document.createElement('li');
