@@ -3,18 +3,73 @@ html {
 }
 
 body {
-    background-color: #333;
-    color: whitesmoke
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+.book-list {
+    margin-bottom: 40px;
+}
+
+.book-list h2 {
+    color: #555;
+}
+
+.book-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-list ul li {
+    background-color: #ffff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.book-list ul li img {
+    width: 100px;
+    height: 150px;
+    margin-right: 15px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    .book-list ul li img {
+        width: 120px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .book-list ul li img {
+        width: 150px;
+        height: 225px;
+    }
 }
 
 a {
-    color: aliceblue;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-a:visited {
-    color: lightgray;
+a:hover {
+    text-decoration: underline;
 }
 
-a:hover, a:active {
-    color: #eee;
+p {
+    font-size: 1.1em;
+
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
