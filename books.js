@@ -23,6 +23,12 @@ const readBooks = [{
     title: "Zero to One",
     author: "Peter Thiel",
     cover: "images/zero-to-one.jpg"
+},
+{
+    title: "Modern Romance",
+    author: "Aziz Ansari",
+    cover: "images/modern-romance.jpg"
+
 }
 
 ]
@@ -30,6 +36,7 @@ const readBooks = [{
 function displayBooks(listId, books) {
     books.sort((a, b) => a.title.localeCompare(b.title));
     const ul = document.getElementById(listId);
+    ul.innerHTML = '';
     books.forEach(book => {
         const li = document.createElement('li');
 
@@ -61,3 +68,13 @@ function displayBooks(listId, books) {
 }
 
 displayBooks('read-books', readBooks);
+
+function searchBooks() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const filteredBooks = readBooks.filter(book => book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query));
+    displayBooks('read-books', filteredBooks);
+
+}
+
+document.getElementById('search-input').addEventListener('input', searchBooks);
+
