@@ -1,4 +1,3 @@
-console.log("JavaScript is running!");
 const readBooks = [{
     title: "Born a Crime",
     author: "Trevor Noah",
@@ -29,6 +28,32 @@ const readBooks = [{
     author: "Aziz Ansari",
     cover: "images/modern-romance.jpg"
 
+},
+{
+    title: "The Voice of the Jamaican Ghetto",
+    author: "Adidja Palmer, Michael Dawson",
+    cover: "images/the-voice-of-the-jamaican-ghetto.jpg"
+},
+{
+    title: "Permanent Record",
+    author: "Edward Snowden",
+    cover: "images/permanent-record.jpg"
+    
+},
+{
+    title: "Elon Musk",
+    author: "Walter Isaacson",
+    cover: "images/elon-musk.jpg"
+},
+{
+    title: "Becoming",
+    author: "Michelle Obama",
+    cover: "images/becoming.jpg"
+},
+{
+    title: "Working: People Talk About What They Do All Day and How They Feel About What They Do",
+    author: "Studs Terkel",
+    cover: "images/working.jpg"
 }
 
 ]
