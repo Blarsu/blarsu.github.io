@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tevin Rose — Software Engineer" />
-  <meta name="author" content="Tevin Rose" />
+  <meta name="description" content="Tevin Rose — Bookshelf" />
   <link rel="shortcut icon" href="images/TR2.ico" />
   <link rel="stylesheet" href="style.css" />
-  <title>Tevin Rose</title>
+  <title>Bookshelf — Tevin Rose</title>
 </head>
 <body>
   <nav>
+    <a class="back" href="index.html">← Tevin Rose</a>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
       <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -19,38 +19,22 @@
 
   <main>
     <header>
-      <div class="intro">
-        <div class="intro-text">
-          <h1>Tevin Rose</h1>
-          <p class="tagline">I like to build cool stuff. Enjoy the site!</p>
-        </div>
-        <img class="avatar" src="images/tev-small.JPG" alt="Tevin Rose" />
+      <div class="bookshelf-header">
+        <h1>Bookshelf</h1>
+        <input type="text" id="search-input" placeholder="Search…" autocomplete="off" />
       </div>
+      <p class="tagline">
+        Reading has been one of the most impactful ways I've shaped my thinking.
+        Inspired by <a href="https://patrickcollison.com/bookshelf" target="_blank" rel="noopener noreferrer">Patrick Collison</a>.
+      </p>
     </header>
 
-    <section class="projects">
-      <a class="card" href="https://jobradar.tevinjrose.com" target="_blank" rel="noopener noreferrer">
-        <div class="card-inner">
-          <div>
-            <span class="card-label">JobRadar</span>
-            <span class="card-desc">AI-powered job aggregator. Add companies, set your criteria, get your feed scored and ranked.</span>
-          </div>
-          <span class="card-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="card" href="bookshelf.html">
-        <div class="card-inner">
-          <div>
-            <span class="card-label">Bookshelf</span>
-            <span class="card-desc">Books that have shaped how I think. Growing list.</span>
-          </div>
-          <span class="card-arrow">→</span>
-        </div>
-      </a>
-    </section>
+    <div class="book-list">
+      <ul id="read-books"></ul>
+    </div>
   </main>
 
+  <script src="books.js"></script>
   <script>
     const toggle = document.getElementById('theme-toggle');
     const moon = document.getElementById('icon-moon');

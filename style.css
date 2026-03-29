@@ -1,126 +1,279 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
-    font-size: 22px
+  font-size: 16px;
+  background-color: #fafafa;
+  color: #0a0a0a;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark {
+  background-color: #0f0f0f;
+  color: #f0f0f0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  padding: 32px 40px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ── Nav ───────────────────────────────────────────────────── */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+nav:has(.back) {
+  justify-content: space-between;
+}
+
+.back {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+
+.theme-toggle:hover {
+  opacity: 1;
+}
+
+/* ── Header ────────────────────────────────────────────────── */
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.intro-text {
+  flex: 1;
 }
 
 h1 {
-    color: #333;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 14px;
 }
 
-.book-list {
-    margin-bottom: 40px;
+.tagline {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.6;
 }
 
-.book-list h2 {
-    color: #555;
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  opacity: 0.9;
 }
 
-.book-list ul {
-    list-style-type: none;
-    padding: 0;
+/* ── Project cards ─────────────────────────────────────────── */
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.book-list ul li {
-    background-color: #ffff;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1.5px solid currentColor;
+  border-radius: 12px;
+  padding: 20px 24px;
+  opacity: 0.85;
+  transition: opacity 0.15s, background-color 0.15s, transform 0.15s;
 }
 
-.book-list ul li img {
-    width: 100px;
-    height: 150px;
-    margin-right: 15px;
-    object-fit: cover;
-    border-radius: 5px;
+.card:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
 }
 
-@media (min-width: 768px) {
-    .book-list ul li img {
-        width: 120px;
-        height: 180px;
-    }
+html.dark .card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-@media (min-width: 1024px) {
-    .book-list ul li img {
-        width: 150px;
-        height: 225px;
-    }
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+.card-label {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
-a:hover {
-    text-decoration: underline;
+.card-desc {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.6;
+  line-height: 1.5;
 }
 
-p {
-    font-size: 1.1em;
+.card-arrow {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  opacity: 0.5;
+}
 
-    line-height: 1.6;
-    margin-bottom: 20px;
+/* ── Bookshelf ─────────────────────────────────────────────── */
+
+.bookshelf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.tagline a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 #search-input {
-    padding: 10px;
-    font-size: 1em;
-    width: 250px;
-    margin-right: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    transition: width 0.3s ease;
+  font-size: 0.875rem;
+  padding: 7px 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  outline: none;
+  width: 190px;
+  opacity: 0.6;
+  transition: opacity 0.15s, width 0.2s;
+}
+
+#search-input::placeholder {
+  color: inherit;
+  opacity: 0.5;
 }
 
 #search-input:focus {
-    outline: none;
-    border-color: #007BFF;
+  opacity: 1;
+  width: 220px;
 }
 
-@media (max-width: 768px) {
-    #search-input {
-        width: 200px;
-    }
+.book-list {
+  margin-top: 36px;
 }
 
-@media (max-width: 480px) {
-    #search-input {
-        width: 150px;
-        font-size: 0.9em;
-    }
+.book-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-@media (max-width: 320px) {
-    #search-input {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
+.book-list ul li {
+  border: 1.5px solid currentColor;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  opacity: 0.8;
+  transition: opacity 0.15s;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.book-list ul li:hover {
+  opacity: 1;
 }
 
-@media (max-width: 480px) {
-    .header-container{
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.book-list ul li div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.book-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.book-list ul li img {
+  width: 54px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+
+@media (max-width: 560px) {
+  body {
+    padding: 24px 20px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .bookshelf-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #search-input,
+  #search-input:focus {
+    width: 100%;
+  }
 }
